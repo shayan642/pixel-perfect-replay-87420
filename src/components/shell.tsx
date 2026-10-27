@@ -139,7 +139,7 @@ export function GapBar() {
   );
 }
 
-const DESC: Record<string, (o: Option) => string> = {
+const DESC: Record<Option["key"], (o: Option) => string> = {
   upskill: (o) => `Train up to ${num(o.trained)} existing employees.`,
   recruit: (o) => `Recruit ${num(o.recruited)} specialists.`,
   hybrid: (o) => `Upskill ${num(o.trained)} employees and recruit ${num(o.recruited)} specialists.`,
