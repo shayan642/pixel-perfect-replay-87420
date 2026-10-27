@@ -3,7 +3,8 @@ import { compute, DEFAULT_INPUTS } from "./scenario";
 
 describe("scenario", () => {
   const r = compute(DEFAULT_INPUTS);
-  const o = Object.fromEntries(r.options.map((x) => [x.key, x]));
+  const find = (k: string) => r.options.find((x) => x.key === k)!;
+  const o = { upskill: find("upskill"), recruit: find("recruit"), hybrid: find("hybrid") };
   it("gap is 300 (25%)", () => {
     expect(r.gap).toBe(300);
     expect(r.gapPct).toBe(25);
